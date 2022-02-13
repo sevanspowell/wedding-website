@@ -76,6 +76,27 @@ p {
   text-decoration: none;
 }
 
+.button-invert:hover {
+  background-color: #a34a21;
+  color: #fafafa;
+}
+
+.button-invert {
+  border: 2px solid;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 3px;
+  text-decoration: none;
+
+  color: #a34a21;
+  background-color: #fafafa;
+  transition-duration: 0.2s;
+}
+
+
 .sam-and-georgia {
   margin-block-start: 0;
   margin-block-end: 0;
@@ -113,23 +134,27 @@ h2 {
 /* Navigation */
 .topnav {
   /*overflow: hidden;*/
+  position: fixed;
+  width: 100%;
   background-color: #fafafa;
+  display: flex;
 }
 
 .topnav a {
   float: left;
   display: block;
-  color: #fafafa;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
   font-family: cardo-italic;
+
 }
 
 .topnav a:hover {
-  background-color: #fafafa;
-  color: black;
+  color: #fafafa;
+  background-color: black;
 }
 
 .topnav a.active {

@@ -38,42 +38,139 @@ h2 {
   color: #301d10;
 }
 
+.details {
+  padding: 20px;
+}
+
+.map { grid-area: map; }
+.where { grid-area: where; }
+.when { grid-area: when; }
+
+#overview {
+  <!-- display: grid; -->
+  <!-- grid-template-areas: -->
+  <!--   'when where'; -->
+  <!-- grid-gap: 10rem; -->
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  <!-- padding: 6rem; -->
+  align-items: start;
+  text-align: center;
+}
+
+#overview > div {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+#overview p {
+  font-size: 1.5em;
+}
+
+.when h2 {
+  font-size: 3rem;
+}
+
+.where h2 {
+  font-size: 3rem;
+}
+
+.underline {
+  display: block;
+  width: 60px;
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-bottom-color: #301d10;
+  margin: auto;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+#registry {
+  background-color: #a34a21;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 1.5em;
+}
+
+.pane {
+  padding: 6em 2em;
+  background-color: #fafafa;
+  margin: auto;
+  max-width: 48em;
+  text-align: center;
+}
+
+.pane-title {
+  font-size: 2rem;
+}
+
 </style>
 </head>
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Home</a>
-  <a href="#timeline">Timeline</a>
-  <a href="#contact">RSVP</a>
+  <a href="#home">HOME</a>
+  <a href="#overview">OVERVIEW</a>
+  <a href="#registry">TIMELINE</a>
+  <a href="#rsvp">RSVP</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
 </div>
 
-<div class="bg strip">
+<section id="home" class="bg strip">
   <div class="hero-text flex-container">
       <h1 class="sam-and-georgia">Sam</h1>
       <h1 class="sam-and-georgia">+</h1>
       <h1 class="sam-and-georgia">Georgia</h1>
       <h1 class="coming-soon">10 • 04 • 2022</h1>
+      <svg style="margin-top: 10rem;" height="50px" viewBox="0 0 5 27" stroke="none" fill="currentColor">
+        <rect x="2" y="0" width="1" height="23"></rect>
+        <path d="M0,22.244 L2.493,26.562 L4.986,22.244 L0,22.244 Z"></path>
+      </svg>
   </div>
-</div>
-<div class="white-bg flex-container">
+</section>
+
+<section id="overview" class="white-bg details">
   <div class="when">
-    <h2>When</h2>
-    <p>Sunday, April 10th 2022</p>
+    <h2>WHEN</h2>
+    <span class="underline"></span>
+    <p>April 10th 2022</p>
+    <p>Sunday</p>
   </div>
   <div class="where">
-  <h2>Where</h2>
+    <h2>WHERE</h2>
+    <span class="underline"></span>
     <p>Quarry Farm</p>
     <p>1475 South Western Hwy</p>
     <p>Whitby WA 6123</p>
+    <a href="https://goo.gl/maps/9LMLp5XYkEuQ6oUs6" class="button-invert">SEE ON MAP</a>
   </div>
-  <div class="map">
-  MAP
+
+</section>
+
+<section id="registry">
+  <div class="pane">
+    <div class="pane-title">
+    <h2>REGISTRY</h2>
+    <span class="underline"></span>
+    </div>
+
+    <div class="registry-description">
+    <p>The best present you could possibly give us is the celebration of our marriage. However, if you’d like to spoil us, we’ve picked out a few items, activities, and charities that pique our interests.</p>
+    <a href="http://thkfl.com/basicallybennetts" class="button-invert">Registry on Thankful</a>
+    </div>
   </div>
-</div>
+</section>
 
 <div class="rsvp tan-bg">
   <div class="flex-container covid-preamble">
@@ -84,7 +181,7 @@ h2 {
     However, due to governmental restrictions, we must regretfully ask that if you are not vaccinated, to please refrain from attending our wedding.
     </p>
     <p>
-    With joy and excitement we await spending time with you outside of this occasion!!
+    With joy and excitement we await spending time with you outside of this occasion <3
     </p>
   </div>
 
