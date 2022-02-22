@@ -5,9 +5,31 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 
+@font-face {
+  font-family: brittany-signature;
+  src: url("assets/BrittanySignature-LjyZ.otf");
+}
+
+@font-face {
+  font-family: cardo;
+  src: url("assets/Cardo-Regular.ttf");
+}
+
+@font-face {
+  font-family: cardo-bold;
+  src: url("assets/Cardo-Bold.ttf");
+}
+
+@font-face {
+  font-family: cardo-italic;
+  src: url("assets/Cardo-Italic.ttf");
+}
+
 body {
     margin: 0;
     padding: 0;
+    font-family: cardo-italic;
+    font-size: 1.5rem;
 }
 
 body, html {
@@ -19,9 +41,14 @@ body, html {
     box-sizing: border-box;
     position: relative;
     width: 100%;
-    padding: 6rem 1.5em;
+    padding: 1em 1em 4em 1em;
     text-align: center;
     min-height: 50vh;
+}
+
+.pane-content {
+    max-width: 85vmin;
+    margin: auto;
 }
 
 .pane-row {
@@ -30,7 +57,20 @@ body, html {
 }
 
 #home h1 {
-    font-size: 3rem;
+    font-size: 12vh;
+    font-weight: 400;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-family: brittany-signature;
+}
+
+#home h2 {
+    margin-top: 10vh;
+    font-family: cardo-italic;
+    letter-spacing: 0.1em;
+    font-size: 3vh;
+    font-weight: 400;
+    color: #fafafa;
 }
 
 #home {
@@ -45,10 +85,25 @@ body, html {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    position: relative;
+
+    align-items: center;
+}
+
+#home > svg {
+    position: absolute;
+    bottom: 3vh;
+    display: block;
+
+    height: 8vh;
+    width: 1vh;
+    left: 50%;
+    margin-left: -0.5vh;
 }
 
 #overview {
-    background-color: #aab2b8;
+    background-color: #fafafa;
 }
 
 #rsvp {
@@ -76,6 +131,8 @@ body, html {
 
   position: fixed;
   z-index: 3;
+
+  opacity: 0.9;
 }
 
 .topnav a {
@@ -85,8 +142,8 @@ body, html {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
-  font-family: cardo-italic;
+  font-family: cardo;
+  font-size: 1.2rem;
   box-sizing: border-box;
   flex-grow: 1;
 }
@@ -133,6 +190,70 @@ body, html {
     text-align: center;
     flex-grow: 0;
   }
+}
+
+.faq-question {
+    text-decoration: underline;
+    font-family: 'cardo';
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+h2 {
+  font-family: cardo;
+  font-size: 4rem;
+  font-weight: 400;
+  color: #c28d74;
+  margin-bottom: 0;
+  letter-spacing: 0.2em;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: #fafafa;
+  background-color: #a34a21;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 3px;
+  text-decoration: none;
+}
+
+.button:hover {
+  color: #a34a21;
+  background-color: #fafafa;
+}
+
+.button-invert:hover {
+  background-color: #a34a21;
+  color: #fafafa;
+}
+
+.button-invert {
+  border: 2px solid;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 3px;
+  text-decoration: none;
+
+  color: #a34a21;
+  background-color: #fafafa;
+  transition-duration: 0.2s;
+}
+
+#footer {
+  text-align: center;
 }
 
 </style>
@@ -211,14 +332,14 @@ body, html {
 <section id="registry" class="pane">
 
   <div class="pane-title">
-    <h2>REGISTRY</h2>
+    <h2>GIFTS</h2>
     <span class="underline"></span>
   </div>
 
   <div class="pane-content">
     <p>Your loving presence on our wedding day is all that we desire.</p>
     <p>However, if you wish to honour us with a gift, we have created a registry!</p>
-    <a href="http://thkfl.com/basicallybennetts" class="button-invert">Registry on Thankful</a>
+    <a href="http://thkfl.com/basicallybennetts" class="button-invert">REGISTRY</a>
   </div>
 
 </section>
@@ -235,54 +356,59 @@ body, html {
 
     <div class="faq-item">
       <h3 class="faq-question">What should I wear?</h3>
-      <p class="faq-answer">
-        Whatever you feel most comfortable in! We also encourage functional footwear, as there is uneven ground nearby a.k.a no stilettos please!
-      </p>
+      <div class="faq-answer">
+        <p>Whatever you feel most comfortable in!</p>
+
+        <p>We encourage functional footwear, as there is uneven ground nearby - no stilettos please!</p>
+      </div>
     </div>
 
     <div class="faq-item">
       <h3 class="faq-question">What should I do if I can’t make it?</h3>
-      <p class="faq-answer">
-        You will be dearly missed! Please RSVP “no,” so we can plan accordingly + we will endeavour to celebrate with you soon after!
-      </p>
+      <div class="faq-answer">
+        <p> You will be dearly missed!</p>
+        <p>Please RSVP “no,” so we can plan accordingly + we will endeavour to celebrate with you soon after!</p>
+      </div>
     </div>
 
     <div class="faq-item">
       <h3 class="faq-question">Are children invited?</h3>
-      <p class="faq-answer">
-        We love your little ones!
+      <div class="faq-answer">
+        <p>We love your little ones!</p>
 
-        We recommend parents take the chance to have an evening of relaxation, however, if you wish to bring your little ones, or can't make other arrangements, please do bring them!
-      </p>
+        <p>We recommend parents take the chance to have an evening of relaxation, however, if you wish to bring your little ones, or can't make other arrangements, please do bring them!</p>
+      </div>
     </div>
 
     <div class="faq-item">
       <h3 class="faq-question">What time should I arrive to the ceremony?</h3>
-      <p class="faq-answer">
-        The ceremony will begin promptly at 2pm. Please allow 10-15 minutes to park and be seated.
-      </p>
+      <div class="faq-answer">
+        <p>The ceremony will begin promptly at 2pm.</p>
+        <p>Please allow 10-15 minutes to park and be seated.</p>
+      </div>
     </div>
 
     <div class="faq-item">
       <h3 class="faq-question">What happens after the ceremony?</h3>
-      <p class="faq-answer">
-        We will enjoy light refreshments with our guests for about an hour, before taking family portraits.
-        If you wish to enjoy a drink something more substantial, Lemas Restaurant & Rooftop Bar in Byford is a great spot!
-      </p>
+      <div class="faq-answer">
+        <p>We will enjoy light refreshments with our guests for about an hour, before taking family portraits.</p>
+
+        <p>If you wish to enjoy a drink something more substantial, Lemas Restaurant & Rooftop Bar in Byford is a great spot!</p>
+      </div>
     </div>
 
     <div class="faq-item">
       <h3 class="faq-question">Where should guests park?</h3>
-      <p class="faq-answer">
+      <div class="faq-answer">
         There will be signs to direct you towards where to park, as well as friendly faces to show you where to go!
-      </p>
+      </div>
     </div>
 
     <div class="faq-item">
       <h3 class="faq-question">I still have questions, what is the best way to contact you?</h3>
-      <p class="faq-answer">
-        Please contact us at * insert wedding email address *
-      </p>
+      <div class="faq-answer">
+        Please contact us at mail@sevanspowell.net
+      </div>
     </div>
 
   </div>
@@ -290,6 +416,7 @@ body, html {
 </section>
 
 <section id="footer">
+  <p>Created with love by Samuel Evans-Powell + Georgia Bennett.</p>
 </section>
 
 </div>
@@ -302,6 +429,21 @@ function myFunction() {
   } else {
     x.className = "topnav";
   }
+}
+
+var coll = document.getElementsByClassName("faq-question");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
 }
 </script>
 

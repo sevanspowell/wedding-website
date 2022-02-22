@@ -14,15 +14,73 @@
   }
 
   iframe {
-      height: 3000px;
+      height: 96rem;
       width: 100%;
+  }
+
+  body {
+      margin: 0;
+      padding: 0;
+  }
+
+  body, html {
+      height: 100%;
+      margin: 0;
+  }
+
+  .pane {
+      box-sizing: border-box;
+      position: relative;
+      width: 100%;
+      padding: 6rem 1.5em;
+      text-align: center;
+      min-height: 50vh;
+  }
+
+  #rsvp-form {
+      padding: 0;
+  }
+
+  .pane-row {
+      display: block;
+      margin-bottom: 3em;
+  }
+
+  #home h1 {
+      font-size: 3rem;
+  }
+
+  #home {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/header.png");
+      background-color: #a34a21;
+      color: #fafafa;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      position: relative;
+
+      flex-wrap: wrap;
+      flex-flow: column wrap;
+      align-items: center;
+
+      min-height: 25vh;
   }
 </style>
 <body>
 
-<div class="form">
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdNWtgXpxojv1n7U7jvH6hdBNeQgr6BGBaO5JA8ICbCzSvvWg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-</div>
+  <div id="home">
+    <a href="./index2.html" class="button">Go Back</a>
+  </div>
+
+  <div id="rsvp-form" class="pane">
+    <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdNWtgXpxojv1n7U7jvH6hdBNeQgr6BGBaO5JA8ICbCzSvvWg/viewform?embedded=true" frameborder="0" scrolling="no">Loading…</iframe> -->
+    <script type="text/javascript" src="https://form.jotform.com/jsform/220522024625039"></script>
+  </div>
 
 </body>
 </html>
