@@ -1,0 +1,13 @@
+iframe {
+    height: 96rem;
+    width: 100%;
+}
+
+#rsvp-form {
+    padding: 0;
+}
+
+#home {
+    min-height: 25vh;
+    height: auto;
+}
