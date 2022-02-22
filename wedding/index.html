@@ -3,213 +3,459 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="assets/styles.css">
 <style>
 
-.covid-preamble {
-  text-align: center;
+@font-face {
+  font-family: brittany-signature;
+  src: url("assets/BrittanySignature-LjyZ.otf");
 }
 
-.flex-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.rsvp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 20px;
-}
-
-h2 {
-  letter-spacing: 0.2em;
-  color: #c28d74;
+@font-face {
   font-family: cardo;
-  font-weight: 400;
+  src: url("assets/Cardo-Regular.ttf");
 }
 
-.where p {
+@font-face {
+  font-family: cardo-bold;
+  src: url("assets/Cardo-Bold.ttf");
+}
+
+@font-face {
   font-family: cardo-italic;
-  font-size: 20px;
-  color: #301d10;
+  src: url("assets/Cardo-Italic.ttf");
 }
 
-.details {
-  padding: 20px;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: cardo-italic;
+    font-size: 1.5rem;
 }
 
-.map { grid-area: map; }
-.where { grid-area: where; }
-.when { grid-area: when; }
-
-#overview {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-#overview > div {
-}
-
-#overview > .where {
-  margin-top: 6rem;
-}
-
-#overview p {
-  font-size: 1.5em;
-}
-
-.when h2 {
-  font-size: 3rem;
-}
-
-.where h2 {
-  font-size: 3rem;
-}
-
-.underline {
-  display: block;
-  width: 60px;
-  border-bottom-width: 4px;
-  border-bottom-style: solid;
-  border-bottom-color: #301d10;
-  margin: auto;
-}
-
-p {
-  font-size: 1.5em;
-}
-
-#registry {
-  background-color: #a34a21;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 6rem 1.5em;
-}
-
-.pane-content {
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#registry .pane-content {
-  max-width: 48em;
-  background-color: #fafafa;
-  padding: 6em 2em;
-}
-
-.placard-title {
-  font-size: 2rem;
-}
-
-#timeline {
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: center;
-  grid-gap: 0px 200px;
-}
-
-#timeline > .event {
-  text-align: left;
+body, html {
+  height: 100%;
+  margin: 0;
 }
 
 .pane {
-  box-sizing: border-box;
-  min-height: 50vh;
-  position: relative;
-  width: 100%;
-  padding: 6rem 1.5em;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    padding: 3em 1em 3em 1em;
+    text-align: center;
+    min-height: 50vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
+
+.pane-content {
+    max-width: 50rem;
+    margin: auto;
+}
+
+.pane-row {
+    display: block;
+    margin-bottom: 3em;
+}
+
+#home h1 {
+    font-size: 12vh;
+    font-weight: 400;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-family: brittany-signature;
+}
+
+#home h2 {
+    margin-top: 10vh;
+    font-family: cardo-italic;
+    letter-spacing: 0.1em;
+    font-size: 3vmax;
+    font-weight: 400;
+    color: #fafafa;
+}
+
+#home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/header.png");
+    background-color: #a34a21;
+    color: #fafafa;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+
+    align-items: center;
+}
+
+#home > svg {
+    position: absolute;
+    bottom: 3vh;
+    display: block;
+
+    height: 8vh;
+    width: 1vh;
+    left: 50%;
+    margin-left: -0.5vh;
+}
+
+#overview {
+    background-color: #fafafa;
+}
+
+#rsvp {
+    background-color: #e0b8a5;
+}
+
+#registry {
+    background-color: #e1c29d;
+}
+
+.end-of-page {
+    background-color: #9d9ba5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#faq h2 {
+    color: #fafafa;
+    /*color: #e3d2ff;*/
+}
+
+.end-of-page {
+    min-height: 100vh;
+}
+
+/* Navigation */
+.topnav {
+  overflow: hidden;
+  width: 100%;
+  background-color: #fafafa;
+  display: flex;
+
+  position: fixed;
+  z-index: 3;
+
+  opacity: 0.9;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 1rem 0vh;
+  text-decoration: none;
+  font-family: cardo;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.topnav a:hover {
+}
+
+.topnav a.active {
+  /*background-color: #04AA6D;
+  color: white;*/
+}
+
+.topnav .menu {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.menu {
+    float: right;
+    display: block;
+    text-align: center;
+    padding: 1vh 0vh;
+  }
+
+  .topnav {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    z-index: 1;
+  }
+  .topnav.responsive .menu {
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: center;
+    flex-grow: 0;
+    padding: 1vh 0vh;
+  }
+}
+
+.faq-question {
+    text-decoration: underline;
+    font-family: 'cardo';
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+h2 {
+  font-family: cardo;
+  font-size: 4rem;
+  font-weight: 400;
+  color: #c28d74;
+  margin-bottom: 0;
+  margin-top: 0;
+  letter-spacing: 0.2em;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: #fafafa;
+  background-color: #a34a21;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 3px;
+  text-decoration: none;
+}
+
+.button:hover {
+  color: #a34a21;
+  background-color: #fafafa;
+}
+
+.button-invert:hover {
+  background-color: #a34a21;
+  color: #fafafa;
+}
+
+.button-invert {
+  border: 2px solid;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 3px;
+  text-decoration: none;
+
+  color: #a34a21;
+  background-color: #fafafa;
+  transition-duration: 0.2s;
+}
+
+#footer {
+  text-align: center;
+  color: #fafafa;
+  letter-spacing: 0.1rem;
+  font-family: cardo;
+}
+
+/*
+.placard {
+  background-color: #fafafa;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 1.5rem 4rem 1.5rem;
+  width: auto;
+}
+*/
 
 </style>
 </head>
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="#home">HOME</a>
-  <a href="#overview">OVERVIEW</a>
-  <a href="#registry">TIMELINE</a>
-  <a href="#rsvp">RSVP</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
+  <a href="javascript:void(0);" class="menu" onclick="myFunction()">
+    MENU
   </a>
+  <a href="#home" onclick="myFunction()">HOME</a>
+  <a href="#overview" onclick="myFunction()">OVERVIEW</a>
+  <a href="#rsvp" onclick="myFunction()">RSVP</a>
+  <a href="#registry" onclick="myFunction()">REGISTRY</a>
+  <a href="#faq" onclick="myFunction()">FAQ</a>
 </div>
 
-<section id="home" class="bg strip">
-  <div class="hero-text flex-container">
-      <h1 class="sam-and-georgia">Sam</h1>
-      <h1 class="sam-and-georgia">+</h1>
-      <h1 class="sam-and-georgia">Georgia</h1>
-      <h1 class="coming-soon">10 • 04 • 2022</h1>
-      <svg style="margin-top: 10rem;" height="50px" viewBox="0 0 5 27" stroke="none" fill="currentColor">
+<section id="home" class="pane">
+      <h1>Sam</h1>
+      <h1>+</h1>
+      <h1>Georgia</h1>
+      <h2>10 • 04 • 2022</h2>
+      <svg height="2.5rem" viewBox="0 0 5 27" stroke="none" fill="currentColor">
         <rect x="2" y="0" width="1" height="23"></rect>
         <path d="M0,22.244 L2.493,26.562 L4.986,22.244 L0,22.244 Z"></path>
       </svg>
+</section>
+
+<section id="overview" class="pane">
+  <div class="pane-content">
+
+    <div class="pane-row">
+      <h2>WHEN</h2>
+      <span class="underline"></span>
+      <p>April 10th 2022</p>
+      <p>Sunday</p>
+      <p>2pm ~ Ceremony</p>
+      <p>5pm ~ Reception</p>
+    </div>
+
+    <div class="pane-row">
+      <h2>WHERE</h2>
+      <span class="underline"></span>
+      <p>Quarry Farm</p>
+      <p>1475 South Western Hwy</p>
+      <p>Whitby WA 6123</p>
+      <a href="https://goo.gl/maps/9LMLp5XYkEuQ6oUs6" class="button-invert">SEE ON MAP</a>
+    </div>
+
   </div>
 </section>
 
-<section id="overview" class="white-bg pane details">
-  <div class="when">
-    <h2>WHEN</h2>
-    <span class="underline"></span>
-    <p>April 10th 2022</p>
-    <p>Sunday</p>
-    <div id="timeline">
-      <p class="time">2 pm</p>
-      <p class="event">Ceremony</p>
-      <p class="time">3 pm</p>
-      <p class="event">Lemas Restaurant & Rooftop Bar</p>
-      <p class="time">5 pm</p>
-      <p class="event">Reception</p>
+<section id="rsvp" class="pane">
+
+  <div class="placard">
+    <div class="pane-title">
+      <h2>RSVP</h2>
+      <span class="underline"></span>
     </div>
-  </div>
-  <div class="where">
-    <h2>WHERE</h2>
-    <span class="underline"></span>
-    <p>Quarry Farm</p>
-    <p>1475 South Western Hwy</p>
-    <p>Whitby WA 6123</p>
-    <a href="https://goo.gl/maps/9LMLp5XYkEuQ6oUs6" class="button-invert">SEE ON MAP</a>
+
+    <div class="pane-content">
+      <p>
+        We honour and respect everybody's personal response to the vaccine mandates.
+      </p>
+      <p>
+        However, due to the restrictions, we must regretfully ask that if you are not vaccinated, to please refrain from attending our wedding.
+      </p>
+      <p>
+        With joy and excitement we await spending time with you outside of this occasion <3
+                                                                                           </p>
+
+      <a href="./rsvp.html" class="button">RSVP</a>
+    </div>
   </div>
 
 </section>
 
 <section id="registry" class="pane">
-  <div class="pane-content">
-    <div class="placard-title">
-    <h2>REGISTRY</h2>
-    <span class="underline"></span>
+
+  <div class="placard">
+    <div class="pane-title">
+      <h2>GIFTS</h2>
+      <span class="underline"></span>
     </div>
 
-    <div class="registry-description">
-    <p>The best present you could possibly give us is the celebration of our marriage. However, if you’d like to spoil us, we’ve picked out a few items, activities, and charities that pique our interests.</p>
-    <a href="http://thkfl.com/basicallybennetts" class="button-invert">Registry on Thankful</a>
+    <div class="pane-content">
+      <p>Your loving presence on our wedding day is all that we desire.</p>
+      <p>However, if you wish to honour us with a gift, we have created a registry!</p>
+      <a href="http://thkfl.com/basicallybennetts" class="button">REGISTRY</a>
     </div>
   </div>
+
 </section>
 
-<div class="rsvp tan-bg pane">
-  <div class="flex-container covid-preamble">
-    <p>
-    We honour and respect everybody's personal response to the vaccine mandates.
-    </p>
-    <p>
-    However, due to governmental restrictions, we must regretfully ask that if you are not vaccinated, to please refrain from attending our wedding.
-    </p>
-    <p>
-    With joy and excitement we await spending time with you outside of this occasion <3
-    </p>
+<div class="end-of-page">
+<section id="faq" class="pane">
+
+  <div class="placard">
+    <div class="pane-title">
+      <h2>F.A.Q.</h2>
+      <span class="underline"></span>
+    </div>
+
+    <div class="pane-content">
+
+      <div class="faq-item">
+        <h3 class="faq-question">What should I wear?</h3>
+        <div class="faq-answer">
+          <p>Whatever you feel most comfortable in!</p>
+
+          <p>We encourage functional footwear, as there is uneven ground nearby - no stilettos please!</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">What should I do if I can’t make it?</h3>
+        <div class="faq-answer">
+          <p> You will be dearly missed!</p>
+          <p>Please RSVP “no,” so we can plan accordingly + we will endeavour to celebrate with you soon after!</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">Are children invited?</h3>
+        <div class="faq-answer">
+          <p>We love your little ones!</p>
+
+          <p>We recommend parents take the chance to have an evening of relaxation, however, if you wish to bring your little ones, or can't make other arrangements, please do bring them!</p>
+
+          <p>Remember to RSVP everyone in your party.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">What time should I arrive to the ceremony?</h3>
+        <div class="faq-answer">
+          <p>The ceremony will begin promptly at 2pm.</p>
+          <p>Please allow 10-15 minutes to park and be seated.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">What happens after the ceremony?</h3>
+        <div class="faq-answer">
+          <p>We will enjoy light refreshments with our guests for about an hour, before taking family portraits.</p>
+
+          <p>If you wish to enjoy a drink something more substantial, Lemas Restaurant & Rooftop Bar in Byford is a great spot!</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">Where should guests park?</h3>
+        <div class="faq-answer">
+          There will be signs to direct you towards where to park, as well as friendly faces to show you where to go!
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">I still have questions, what is the best way to contact you?</h3>
+        <div class="faq-answer">
+          Please contact us at mail@sevanspowell.net
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <a href="./rsvp.html" class="button">RSVP</a>
+</section>
+
+<section id="footer">
+  <p>Created with 💕 by Samuel Evans-Powell + Georgia Bennett.</p>
+</section>
+
 </div>
 
 <script>
@@ -220,6 +466,21 @@ function myFunction() {
   } else {
     x.className = "topnav";
   }
+}
+
+var coll = document.getElementsByClassName("faq-question");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
 }
 </script>
 

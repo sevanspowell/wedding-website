@@ -4,9 +4,28 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="assets/styles.css">
 </head>
 <style>
+  @font-face {
+    font-family: brittany-signature;
+    src: url("assets/BrittanySignature-LjyZ.otf");
+  }
+
+  @font-face {
+    font-family: cardo;
+    src: url("assets/Cardo-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: cardo-bold;
+    src: url("assets/Cardo-Bold.ttf");
+  }
+
+  @font-face {
+    font-family: cardo-italic;
+    src: url("assets/Cardo-Italic.ttf");
+  }
+
   .form {
     display: flex;
     flex-direction: column;
@@ -21,6 +40,8 @@
   body {
       margin: 0;
       padding: 0;
+      font-family: cardo-italic;
+      font-size: 1.5rem;
   }
 
   body, html {
@@ -70,11 +91,29 @@
 
       min-height: 25vh;
   }
+
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: #fafafa;
+    background-color: #a34a21;
+    text-align: center;
+    cursor: pointer;
+    letter-spacing: 3px;
+    text-decoration: none;
+  }
+
+  .button:hover {
+    color: #a34a21;
+    background-color: #fafafa;
+  }
 </style>
 <body>
 
   <div id="home">
-    <a href="./index2.html" class="button">Go Back</a>
+    <a href="./index2.html" class="button">BACK</a>
   </div>
 
   <div id="rsvp-form" class="pane">
